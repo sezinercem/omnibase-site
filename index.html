@@ -209,6 +209,76 @@
             font-family: 'Staatliches', Impact, Charcoal, sans-serif;
             font-size: 1.1em;
         }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 900px) {
+            body {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                font-size: 1em !important;
+            }
+            .hero-title {
+                font-size: 2em !important;
+                margin-top: 60px !important;
+            }
+            .hero-section {
+                flex-direction: column !important;
+                min-height: 30vh !important;
+                margin-top: 30px !important;
+            }
+            .what-we-do-section,
+            .process-section,
+            .pricing-section,
+            .contact-section {
+                padding: 24px 6vw 24px 6vw !important;
+                margin: 32px auto 0 auto !important;
+                max-width: 98vw !important;
+            }
+            .what-we-do-section > div,
+            .pricing-section > div {
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+            .process-step {
+                min-width: 0 !important;
+                max-width: 100% !important;
+                margin-bottom: 18px !important;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0.5em 0.5em !important;
+            }
+            .logo {
+                font-size: 1.3em !important;
+            }
+            .nav-center-logo {
+                max-height: 38px !important;
+            }
+            .hero-title {
+                font-size: 1.2em !important;
+            }
+            .button-primary, .button-secondary {
+                font-size: 1em !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                height: 44px !important;
+                margin: 12px 0 !important;
+            }
+            .contact-section {
+                padding: 18px 2vw 18px 2vw !important;
+            }
+            .contact-section form {
+                max-width: 100% !important;
+            }
+            .what-we-do-section,
+            .process-section,
+            .pricing-section {
+                padding: 12px 2vw 12px 2vw !important;
+            }
+        }
     </style>
 </head>
 <body style= "padding-left: 70px; padding-right: 70px; color: rgb(255, 255, 255); background-color: black; text-align: center; font-size: large;">
@@ -349,7 +419,7 @@
             Get In Touch
         </h2>
         <!-- Use Formspree for email delivery -->
-        <form action="https://formspree.io/f/xleqzqzq" method="POST" style="display: flex; flex-direction: column; gap: 28px; max-width: 700px; margin: 0 auto;">
+        <form action="https://formspree.io/f/mdkzzeor" method="POST" style="display: flex; flex-direction: column; gap: 28px; max-width: 700px; margin: 0 auto;">
             <label for="name" style="color: rgb(36, 101, 232); font-size: 1.1em;">Name</label>
             <input type="text" id="name" name="name" required
                 style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none;"
