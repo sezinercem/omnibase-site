@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Omnibase | Custom CRM Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, #000000, #002c5a, #002350);
+            filter: blur(10px);
+            z-index: -1;
+        }
+        body {
+            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+        }
+        /* Navigation bar styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            background: rgba(0,0,0,0.0);
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 1;
+        }
+        .logo span {
+            color: white;
+        }
+        .logo span span {
+            color: rgb(36, 101, 232);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2em;
+            z-index: 2;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: rgb(36, 101, 232);
+        } 
+        .nav-logo {
+            width: 60px;
+            height: auto;
+            margin-bottom: 0.2em;
+        }
+        .hero-title {
+            margin-top: 150px;
+        }
+        .nav-center-logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
+            z-index: 2;
+            background: transparent;
+            pointer-events: none;
+        }
+        .button-primary {
+            background-color: rgb(36, 101, 232);
+            color: #fff;
+            border: none;
+            padding: 0.5em 1.5em;
+            border-radius: 0px;
+            font-size: 1.1em;
+            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 24px;
+            margin-right: 16px;
+            height: 38px;
+            line-height: 1;
+        }
+        .button-primary:last-child {
+            margin-right: 0;
+        }
+        .button-primary:hover {
+            background-color: #ffffff;
+            color: rgb(36, 101, 232);
+        }
+        /* New style for Learn More button */
+        .button-secondary {
+            background-color: #fff;
+            color: rgb(36, 101, 232);
+            border: 0px solid rgb(36, 101, 232);
+            padding: 0.5em 1.5em;
+            border-radius: 0px;
+            font-size: 1.1em;
+            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 24px;
+            margin-right: 0;
+            height: 38px;
+            line-height: 1;
+        }
+        .button-secondary:hover {
+            background-color: rgb(36, 101, 232);
+            color: #fff;
+        }
+        .process-step {
+            transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s;
+            will-change: transform, box-shadow;
+        }
+        .process-step:hover {
+            transform: translateY(-18px) scale(1.04) rotate(-2deg);
+            box-shadow: 0 8px 32px rgba(36,101,232,0.18);
+            z-index: 2;
+        }
+        .hero-bg-animate {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 900px;
+            height: 900px;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero-bg-animate .circle1,
+        .hero-bg-animate .circle2,
+        .hero-bg-animate .circle3 {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.18;
+            filter: blur(16px);
+            animation-timing-function: ease-in-out;
+        }
+        .hero-bg-animate .circle1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #2465e8 60%, transparent 100%);
+            left: 10%;
+            top: 20%;
+            animation: float1 12s infinite alternate;
+        }
+        .hero-bg-animate .circle2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #7ea7f7 60%, transparent 100%);
+            right: 10%;
+            top: 40%;
+            animation: float2 14s infinite alternate;
+        }
+        .hero-bg-animate .circle3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #2440e8 60%, transparent 100%);
+            left: 40%;
+            bottom: 0;
+            animation: float3 16s infinite alternate;
+        }
+        @keyframes float1 {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-40px) scale(1.08); }
+        }
+        @keyframes float2 {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(30px) scale(1.04); }
+        }
+        @keyframes float3 {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-25px) scale(1.06); }
+        }
+        .hero-section {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+        .contact-section {
+            max-width: 1200px;
+            margin: 40px auto 10px auto;
+            padding: 48px 32px 40px 32px;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 2px 24px rgba(36,101,232,0.08);
+            text-align: left;
+        }
+        /* Placeholder color for all inputs and textarea in contact-section */
+        .contact-section input::placeholder,
+        .contact-section textarea::placeholder {
+            color: rgba(36, 101, 232, 0.75);
+            opacity: 1;
+            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body style= "padding-left: 70px; padding-right: 70px; color: rgb(255, 255, 255); background-color: black; text-align: center; font-size: large;">
+    <!-- Navigation Bar -->
+    <nav style="position: relative; display: flex; align-items: center; justify-content: space-between;">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <span>Omni<span>Base</span></span>
+            </div>
+        </a>
+        <a href="index.html" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 100%; max-height: 60px; z-index: 2; background: transparent; pointer-events: auto;">
+            <img 
+                src="https://static.wixstatic.com/media/18f380_8094b021d49c4bb185be56f91ed3269f~mv2.png/v1/fill/w_364,h_242,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Omnibase-logo.png" 
+                alt="Omnibase Logo" class="nav-center-logo"
+                style="height: 100%; max-height: 60px; width: auto; object-fit: contain; background: transparent; pointer-events: auto;"
+            />
+        </a>
+        <div style="display: flex; align-items: center; gap: 2em;">
+            <!-- Removed nav-links for Home, About, Services -->
+            <button class="button-primary" style="margin-top: 0;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="hero-section" style="display: flex; align-items: center; justify-content: center; min-height: 50vh; margin-top: 70px; position: relative;">
+        <div class="hero-bg-animate">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+        <div class="hero-text" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <p style="font-size: 18px; color: rgb(173, 190, 225); margin-bottom: 6px; letter-spacing: 1px;">
+                CRM &amp; SaaS Development for Growth-Driven Brands
+            </p>
+            <h1 class="hero-title" style="font-size: 60px; margin: 0;">
+                Accelerate your <span style="color:rgb(36, 101, 232);">growth</span> with <br>
+                powerful, <span style="color:rgb(36, 101, 232);">scalable</span> software solutions
+            </h1>
+            <p style="font-style: bold; font-size: 28px; margin-top: 18px;">
+                Trusted partner in <span style="color:rgb(36, 101, 232);">CRM</span> and 
+                <span style="color:rgb(36, 101, 232);">SaaS</span> development for UK scaleups.
+            </p>
+            <div style="display: flex; justify-content: center; width: 100%; margin-top: 32px;">
+                <button class="button-primary" 
+                    style="font-size: 1.35em; width: 240px; height: 58px; border-radius: 8px; margin: 0 auto; display: block;"
+                    onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">
+                    Get In Touch
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="what-we-do-section" style="max-width: 100%; margin: 140px auto 0 auto; padding: 64px 40px 56px 40px; background: #fff; border-radius: 32px; box-shadow: 0 4px 32px rgba(36,101,232,0.10); text-align: center;">
+        <h2 style="font-size: 48px; color: rgb(36, 101, 232); margin-bottom: 28px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
+            Partnering with UK tech leaders to grow CRM & SaaS platforms
+        </h2>
+        <p style="font-size: 1.5em; color: #222; margin-bottom: 48px;">
+            We design and build custom CRM and SaaS solutions that help ambitious UK businesses scale faster and work smarter. 
+            Our team combines technical expertise with a deep understanding of your business needs, delivering platforms that automate processes, 
+            improve customer relationships, and unlock new growth opportunities.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 48px; margin-bottom: 48px;">
+            <div style="flex: 1 1 300px; min-width: 260px; max-width: 350px; background: #f7faff; border-radius: 20px; box-shadow: 0 2px 12px rgba(36,101,232,0.08); padding: 32px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.4em; margin-bottom: 14px;">Custom CRM Development</h3>
+                <p style="color: #333; font-size: 1.08em;">Tailored CRM platforms that fit your workflow, automate tasks, and help you build lasting customer relationships.</p>
+            </div>
+            <div style="flex: 1 1 300px; min-width: 260px; max-width: 350px; background: #f7faff; border-radius: 20px; box-shadow: 0 2px 12px rgba(36,101,232,0.08); padding: 32px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.4em; margin-bottom: 14px;">SaaS Product Engineering</h3>
+                <p style="color: #333; font-size: 1.08em;">We turn your ideas into scalable, secure SaaS products—ready to launch, grow, and adapt with your business.</p>
+            </div>
+            <div style="flex: 1 1 300px; min-width: 260px; max-width: 350px; background: #f7faff; border-radius: 20px; box-shadow: 0 2px 12px rgba(36,101,232,0.08); padding: 32px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.4em; margin-bottom: 14px;">Process Automation</h3>
+                <p style="color: #333; font-size: 1.08em;">Streamline repetitive tasks and connect your tools for greater efficiency, accuracy, and business insight.</p>
+            </div>
+        </div>
+        <button class="button-primary" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
+    </div>
+    <div class="process-section" style="max-width: 1000px; margin: 140px auto 0 auto; padding: 0 40px; text-align: center;">
+        <h2 style="font-size: 2.5em; color: #fff; margin-bottom: 28px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
+            Our 4-Step Process
+        </h2>
+        <p style="font-size: 1.2em; color: #ffffff; margin-bottom: 48px;">
+            We believe in clarity, collaboration, and results. Here’s how we guide you from idea to impact:
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 40px;">
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
+                    <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">1. Discover</h3>
+                    <p style="color: #ffffff; font-size: 1.08em;">We align with your goals, users, and technical needs.</p>
+                </div>
+                <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
+                    <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">2. Design</h3>
+                    <p style="color: #ffffff; font-size: 1.08em;">Crafting intuitive, scalable CRM & SaaS product experiences.</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
+                    <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">3. Build</h3>
+                    <p style="color: #ffffff; font-size: 1.08em;">Our team develops, tests, and refines your CRM or SaaS platform with care and precision.</p>
+                </div>
+                <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
+                    <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">4. Launch & Support</h3>
+                    <p style="color: #ffffff; font-size: 1.08em;">We launch your solution, provide training, and offer ongoing support as you grow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pricing-section" style="max-width: 1100px; margin: 120px auto 0 auto; padding: 0 40px; text-align: center;">
+        <h2 style="font-size: 2.5em; color: #fff; margin-bottom: 36px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
+            Pricing Plans
+        </h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 48px;">
+            <!-- Basic Plan -->
+            <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Basic</h3>
+                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">£599</div>
+                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 6 users</div>
+                <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Get Started</button>
+            </div>
+            <!-- Premium Plan -->
+            <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Premium</h3>
+                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">£1999</div>
+                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 12 users</div>
+                <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Get Started</button>
+            </div>
+            <!-- Enterprise Plan -->
+            <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
+                <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Enterprise</h3>
+                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">Custom Pricing</div>
+                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">For larger teams & bespoke needs</div>
+                <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
+            </div>
+        </div>
+    </div>
+    <div style="height: 60px;"></div>
+    <!-- Add id to contact form section -->
+    <div id="contact-form-section" class="contact-section" style="max-width: 1200px; margin: 40px auto 10px auto; padding: 48px 32px 40px 32px; background: #fff; border-radius: 28px; box-shadow: 0 2px 24px rgba(36,101,232,0.08); text-align: left;">
+        <h2 style="font-size: 2.2em; color: rgb(36, 101, 232); margin-bottom: 28px; font-family: 'Staatliches', Impact, Charcoal, sans-serif; text-align: center;">
+            Get In Touch
+        </h2>
+        <!-- Use Formspree for email delivery -->
+        <form action="https://formspree.io/f/xleqzqzq" method="POST" style="display: flex; flex-direction: column; gap: 28px; max-width: 700px; margin: 0 auto;">
+            <label for="name" style="color: rgb(36, 101, 232); font-size: 1.1em;">Name</label>
+            <input type="text" id="name" name="name" required
+                style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none;"
+                placeholder="Your Name" />
+
+            <label for="email" style="color: rgb(36, 101, 232); font-size: 1.1em;">Email</label>
+            <input type="email" id="email" name="email" required
+                style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none;"
+                placeholder="you@email.com" />
+
+            <label for="number" style="color: rgb(36, 101, 232); font-size: 1.1em;">Phone Number</label>
+            <input type="tel" id="number" name="number" required
+                style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none;"
+                placeholder="Your Number" />
+
+            <label for="message" style="color: rgb(36, 101, 232); font-size: 1.1em;">Message</label>
+            <textarea id="message" name="message" rows="5" required
+                style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none; resize: vertical;"
+                placeholder="How can we help?"></textarea>
+
+            <button type="submit" class="button-primary" style="width: 180px; align-self: flex-end; margin-top: 18px;">Send Message</button>
+        </form>
+    </div>
+    <footer style="width: 100%; background: #101522; color: #b3c6e7; text-align: center; padding: 36px 0 24px 0; margin-top: 60px; font-family: 'Staatliches', Impact, Charcoal, sans-serif; font-size: 1.1em;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 1.3em; color: #fff;">Omni<span style="color:rgb(36,101,232);">Base</span></span>
+            </div>
+            <div style="margin-bottom: 10px;">
+                &copy; 2025 Omnibase. All rights reserved.
+            </div>
+            
+        </div>
+    </footer>
+
+
+</html></body></body>
+</html>
