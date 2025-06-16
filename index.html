@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnibase | Custom CRM & SaaS Solutions for UK Businesses</title>
+    <title>OmniBase | Custom CRM & SaaS Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/18f380_8094b021d49c4bb185be56f91ed3269f~mv2.png/v1/fill/w_364,h_242,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Omnibase-logo.png">
     <meta name="description" content="Omnibase builds custom CRM and SaaS solutions for UK businesses. Accelerate your growth with scalable, automated software.">
@@ -27,12 +27,15 @@
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, #000000, #002c5a, #002350);
-            filter: blur(10px);
+            /* Much more subtle blue-tinted gradient */
+            background: linear-gradient(135deg, #f8fafd 0%, #eef3fa 100%);
+            filter: blur(6px);
             z-index: -1;
         }
         body {
             font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            color: #000 !important; /* was white */
+            background-color: #fff !important; /* was black */
         }
         /* Navigation bar styles */
         nav {
@@ -48,13 +51,13 @@
             flex-direction: column;
             align-items: center;
             font-size: 2em;
-            color: white;
+            color: rgb(0, 0, 0);
             font-weight: bold;
             letter-spacing: 1px;
             z-index: 1;
         }
         .logo span {
-            color: white;
+            color: rgb(0, 0, 0);
         }
         .logo span span {
             color: rgb(36, 101, 232);
@@ -65,13 +68,13 @@
             z-index: 2;
         }
         .nav-links a {
-            color: white;
+            color: #000 !important; /* was white */
             text-decoration: none;
             font-size: 1em;
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: rgb(36, 101, 232);
+            color: #2465e8 !important;
         } 
         .nav-logo {
             width: 60px;
@@ -95,9 +98,9 @@
             pointer-events: none;
         }
         .button-primary {
-            background-color: rgb(36, 101, 232);
-            color: #fff;
-            border: none;
+            background-color: #fff !important; /* was blue */
+            color: #2465e8 !important;         /* was white */
+            border: 2px solid #2465e8 !important;
             padding: 0.5em 1.5em;
             border-radius: 0px;
             font-size: 1.1em;
@@ -113,14 +116,14 @@
             margin-right: 0;
         }
         .button-primary:hover {
-            background-color: #ffffff;
-            color: rgb(36, 101, 232);
+            background-color: #2465e8 !important;
+            color: #fff !important;
         }
         /* New style for Learn More button */
         .button-secondary {
-            background-color: #fff;
-            color: rgb(36, 101, 232);
-            border: 0px solid rgb(36, 101, 232);
+            background-color: #000 !important; /* was white */
+            color: #fff !important;            /* was blue */
+            border: 2px solid #2465e8 !important;
             padding: 0.5em 1.5em;
             border-radius: 0px;
             font-size: 1.1em;
@@ -133,12 +136,15 @@
             line-height: 1;
         }
         .button-secondary:hover {
-            background-color: rgb(36, 101, 232);
-            color: #fff;
+            background-color: #2465e8 !important;
+            color: #fff !important;
         }
         .process-step {
             transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s;
             will-change: transform, box-shadow;
+            background: #fff !important; /* was transparent/white */
+            color: #000 !important;
+            border: 2px solid #000 !important;
         }
         .process-step:hover {
             transform: translateY(-18px) scale(1.04) rotate(-2deg);
@@ -221,7 +227,7 @@
         /* Placeholder color for all inputs and textarea in contact-section */
         .contact-section input::placeholder,
         .contact-section textarea::placeholder {
-            color: rgba(36, 101, 232, 0.75);
+            color: #3b3c36 !important;
             opacity: 1;
             font-family: 'Staatliches', Impact, Charcoal, sans-serif;
             font-size: 1.1em;
@@ -516,7 +522,7 @@
 }
     </style>
 </head>
-<body style= "padding-left: 70px; padding-right: 70px; color: rgb(255, 255, 255); background-color: black; text-align: center; font-size: large;">
+<body style= "padding-left: 70px; padding-right: 70px; color: rgb(0, 0, 0); background-color: black; text-align: center; font-size: large;">
     <!-- Navigation Bar -->
     <nav style="position: relative; display: flex; align-items: center; justify-content: space-between;">
         <a href="index.html" style="text-decoration: none;">
@@ -544,7 +550,7 @@
             <div class="circle3"></div>
         </div>
         <div class="hero-text" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <p style="font-size: 18px; color: rgb(173, 190, 225); margin-bottom: 6px; letter-spacing: 1px;">
+            <p style="font-size: 18px; color: rgb(102, 103, 107); margin-bottom: 6px; letter-spacing: 1px;">
                 CRM &amp; SaaS Development for Growth-Driven Brands
             </p>
             <h1 class="hero-title" style="font-size: 60px; margin: 0;">
@@ -610,59 +616,59 @@
         <button class="button-primary" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
     </div>
     <div class="process-section" style="max-width: 1000px; margin: 140px auto 0 auto; padding: 0 40px; text-align: center;">
-        <h2 style="font-size: 2.5em; color: #fff; margin-bottom: 28px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
+        <h2 style="font-size: 2.5em; color: #000000; margin-bottom: 28px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
             Our 4-Step Process
         </h2>
-        <p style="font-size: 1.2em; color: #ffffff; margin-bottom: 48px;">
+        <p style="font-size: 1.2em; color: #000000; margin-bottom: 48px;">
             We believe in clarity, collaboration, and results. Here’s how we guide you from idea to impact:
         </p>
         <div style="display: flex; flex-direction: column; gap: 40px;">
             <div style="display: flex; justify-content: center; gap: 40px;">
                 <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
                     <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">1. Discover</h3>
-                    <p style="color: #ffffff; font-size: 1.08em;">We align with your goals, users, and technical needs.</p>
+                    <p style="color: #000000; font-size: 1.08em;">We align with your goals, users, and technical needs.</p>
                 </div>
                 <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
                     <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">2. Design</h3>
-                    <p style="color: #ffffff; font-size: 1.08em;">Crafting intuitive, scalable CRM & SaaS product experiences.</p>
+                    <p style="color: #000000; font-size: 1.08em;">Crafting intuitive, scalable CRM & SaaS product experiences.</p>
                 </div>
             </div>
             <div style="display: flex; justify-content: center; gap: 40px;">
                 <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
                     <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">3. Build</h3>
-                    <p style="color: #ffffff; font-size: 1.08em;">Our team develops, tests, and refines your CRM or SaaS platform with care and precision.</p>
+                    <p style="color: #000000; font-size: 1.08em;">Our team develops, tests, and refines your CRM or SaaS platform with care and precision.</p>
                 </div>
                 <div class="process-step" style="flex: 1 1 320px; min-width: 280px; max-width: 360px; border: 2px solid #fff; border-radius: 22px; padding: 38px 28px; background: transparent;">
                     <h3 style="color: rgb(36, 101, 232); font-size: 1.3em; margin-bottom: 14px;">4. Launch & Support</h3>
-                    <p style="color: #ffffff; font-size: 1.08em;">We launch your solution, provide training, and offer ongoing support as you grow.</p>
+                    <p style="color: #000000; font-size: 1.08em;">We launch your solution, provide training, and offer ongoing support as you grow.</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="pricing-section" style="max-width: 1100px; margin: 120px auto 0 auto; padding: 0 40px; text-align: center;">
-        <h2 style="font-size: 2.5em; color: #fff; margin-bottom: 36px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
+        <h2 style="font-size: 2.5em; color: #000000; margin-bottom: 36px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
             Pricing Plans
         </h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 48px;">
             <!-- Basic Plan -->
             <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
                 <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Basic</h3>
-                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">£599</div>
-                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 6 users</div>
+                <div style="font-size: 2.2em; color: #000000; font-weight: bold; margin-bottom: 8px;">£599</div>
+                <div style="color: #000; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 6 users</div>
                 <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Get Started</button>
             </div>
             <!-- Premium Plan -->
             <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
                 <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Premium</h3>
-                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">£1999</div>
-                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 12 users</div>
+                <div style="font-size: 2.2em; color: #000000; font-weight: bold; margin-bottom: 8px;">£1999</div>
+                <div style="color: #000; font-size: 1.1em; margin-bottom: 18px;">per month<br>up to 12 users</div>
                 <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Get Started</button>
             </div>
             <!-- Enterprise Plan -->
             <div style="flex: 1 1 340px; min-width: 320px; max-width: 400px; background: rgba(36,101,232,0.18); border: 2px solid rgb(36,101,232); border-radius: 18px; padding: 48px 36px 32px 36px; display: flex; flex-direction: column; align-items: center; min-height: 260px;">
                 <h3 style="color: rgb(36, 101, 232); font-size: 1.5em; margin-bottom: 12px;">Enterprise</h3>
-                <div style="font-size: 2.2em; color: #fff; font-weight: bold; margin-bottom: 8px;">Custom Pricing</div>
-                <div style="color: #b3c6e7; font-size: 1.1em; margin-bottom: 18px;">For larger teams & bespoke needs</div>
+                <div style="font-size: 2.2em; color: #000000; font-weight: bold; margin-bottom: 8px;">Custom Pricing</div>
+                <div style="color: #000; font-size: 1.1em; margin-bottom: 18px;">For larger teams & bespoke needs</div>
                 <button class="button-primary" style="margin-top: 18px;" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
             </div>
         </div>
