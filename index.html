@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OmniBase | Custom CRM & SaaS Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Remove or comment out the Staatliches font link if you want only Inter -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> -->
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/18f380_8094b021d49c4bb185be56f91ed3269f~mv2.png/v1/fill/w_364,h_242,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Omnibase-logo.png">
     <meta name="description" content="Omnibase builds custom CRM and SaaS solutions for UK businesses. Accelerate your growth with scalable, automated software.">
 <meta name="keywords" content="CRM, SaaS, UK, software development, process automation, custom CRM, SaaS engineering">
@@ -33,7 +35,7 @@
             z-index: -1;
         }
         body {
-            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif !important;
             color: #000 !important; /* was white */
             background-color: #fff !important; /* was black */
         }
@@ -104,7 +106,7 @@
             padding: 0.5em 1.5em;
             border-radius: 0px;
             font-size: 1.1em;
-            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif !important;
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
             margin-top: 24px;
@@ -127,7 +129,7 @@
             padding: 0.5em 1.5em;
             border-radius: 0px;
             font-size: 1.1em;
-            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif !important;
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
             margin-top: 24px;
@@ -152,60 +154,8 @@
             z-index: 2;
         }
         .hero-bg-animate {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 900px;
-            height: 900px;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .hero-bg-animate .circle1,
-        .hero-bg-animate .circle2,
-        .hero-bg-animate .circle3 {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.18;
-            filter: blur(16px);
-            animation-timing-function: ease-in-out;
-        }
-        .hero-bg-animate .circle1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, #2465e8 60%, transparent 100%);
-            left: 10%;
-            top: 20%;
-            animation: float1 12s infinite alternate;
-        }
-        .hero-bg-animate .circle2 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #7ea7f7 60%, transparent 100%);
-            right: 10%;
-            top: 40%;
-            animation: float2 14s infinite alternate;
-        }
-        .hero-bg-animate .circle3 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #2440e8 60%, transparent 100%);
-            left: 40%;
-            bottom: 0;
-            animation: float3 16s infinite alternate;
-        }
-        @keyframes float1 {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-40px) scale(1.08); }
-        }
-        @keyframes float2 {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(30px) scale(1.04); }
-        }
-        @keyframes float3 {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-25px) scale(1.06); }
+            /* Remove background and circles for a clean, subtle hero section */
+            display: none !important;
         }
         .hero-section {
             position: relative;
@@ -227,10 +177,7 @@
         /* Placeholder color for all inputs and textarea in contact-section */
         .contact-section input::placeholder,
         .contact-section textarea::placeholder {
-            color: #3b3c36 !important;
-            opacity: 1;
-            font-family: 'Staatliches', Impact, Charcoal, sans-serif;
-            font-size: 1.1em;
+            font-family: 'Inter', Arial, Helvetica, sans-serif !important;
         }
 
         /* --- Responsive Styles --- */
@@ -544,11 +491,6 @@
     </nav>
     <!-- Main Content -->
     <div class="hero-section" style="display: flex; align-items: center; justify-content: center; min-height: 50vh; margin-top: 70px; position: relative;">
-        <div class="hero-bg-animate">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-        </div>
         <div class="hero-text" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <p style="font-size: 18px; color: rgb(102, 103, 107); margin-bottom: 6px; letter-spacing: 1px;">
                 CRM &amp; SaaS Development for Growth-Driven Brands
@@ -571,7 +513,7 @@
         </div>
     </div>
     <!-- AI Section moved here -->
-    <div class="ai-section" style="max-width: 100%; margin: 80px auto 0 auto; padding: 56px 32px 48px 32px; background: #f7faff; border-radius: 28px; box-shadow: 0 2px 24px rgba(36,101,232,0.08); text-align: center;">
+    <div class="ai-section" style="max-width: 100%; margin: 160px auto 0 auto; padding: 56px 32px 48px 32px; background: #f7faff; border-radius: 28px; box-shadow: 0 2px 24px rgba(36,101,232,0.08); text-align: center;">
         <h2 style="font-size: 2.2em; color: rgb(36, 101, 232); margin-bottom: 22px; font-family: 'Staatliches', Impact, Charcoal, sans-serif;">
             AI That Works for You — Built Into Every System
         </h2>
@@ -701,7 +643,7 @@
                 style="padding: 14px 18px; border: none; border-radius: 8px; background: #f3f5fa; color: rgb(36, 101, 232); font-size: 1.1em; outline: none; resize: vertical;"
                 placeholder="How can we help?"></textarea>
 
-            <button type="submit" class="button-primary" style="width: 180px; align-self: flex-end; margin-top: 18px;">Send Message</button>
+            <button type="submit" class="button-primary" style="width: 260px; align-self: flex-end; margin-top: 18px;">Send Message</button>
         </form>
     </div>
     <footer style="width: 100%; background: #101522; color: #b3c6e7; text-align: center; padding: 36px 0 24px 0; margin-top: 60px; font-family: 'Staatliches', Impact, Charcoal, sans-serif; font-size: 1.1em;">
