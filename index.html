@@ -439,7 +439,24 @@
                 box-sizing: border-box !important;
             }
             
-            /* ... other existing mobile styles ... */
+            /* Fix for hero buttons on mobile */
+    .hero-text > div {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .button-primary, .button-secondary {
+        font-size: 1em !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        padding: 14px 20px !important;
+        margin: 6px 0 !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
         }
     </style>
 </head>
