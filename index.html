@@ -410,6 +410,37 @@
         text-align: center !important;
     }
 }
+        @media (max-width: 600px) {
+            /* Mobile nav layout - center logo with links below */
+            nav {
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                padding: 12px 0 !important;
+                gap: 12px !important;
+            }
+            
+            .logo {
+                font-size: 1.8em !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+            
+            .nav-links {
+                justify-content: center !important;
+                width: 100% !important;
+                margin-top: 8px !important;
+                gap: 12px !important;
+            }
+            
+            /* Hero section mobile padding */
+            .hero-section {
+                padding: 0 16px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* ... other existing mobile styles ... */
+        }
     </style>
 </head>
 <body style= "padding-left: 70px; padding-right: 70px; color: rgb(0, 0, 0); background-color: #e4faf2; text-align: center; font-size: large;">
